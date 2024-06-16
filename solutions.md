@@ -152,3 +152,17 @@ select course_name,count(student_id) as countno from Courses left join Enrollmen
 ```
 ![alt text](image-9.png)
 
+```sql
+
+-- 8. Find the names of students who have not enrolled in any course.
+
+select concat(first_name,' ',last_name) as student_name from
+Students inner join
+Enrollments on
+Students.student_id= Enrollments.student_id 
+where  Enrollments.student_id is null;
+
+```
+![alt text](image-10.png)
+
+```sql
