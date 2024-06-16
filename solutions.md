@@ -184,3 +184,15 @@ select concat(first_name,' ',last_name) as teacher_name, course_name from Teache
 ```
 ![alt text](image-12.png) 
 
+```sql 
+--11. Calculate the average number of students enrolled in each course using aggregate functions and subqueries.
+
+select avg(student_count) as avg_students_per_course from
+(select course_id,count(student_id) as student_count from Enrollments group by course_id)
+as student_counts;
+
+```
+![](image-13.png)  
+
+```sql 
+--12.
