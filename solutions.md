@@ -172,3 +172,15 @@ where  Enrollments.student_id is null;
 select first_name,last_name,course_name  from Students inner join Enrollments on  Students.student_id= Enrollments.student_id  inner join Courses on Enrollments.course_id=Courses.course_id where Enrollments.enrollment_id is not null;
 ```
 ![alt text](image-11.png)
+
+
+
+```sql 
+--10. List names of teachers and the courses they are assigned to.
+
+select concat(first_name,' ',last_name) as teacher_name, course_name from Teachers  left join  Courses on Teachers.teacher_id=Courses.teacher_id;
+
+
+```
+![alt text](image-12.png) 
+
