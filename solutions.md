@@ -77,11 +77,20 @@ CREATE TABLE Teachers (
     last_name VARCHAR(50),
     email VARCHAR(100)
 );
+
 -- Insert data into Teachers Table
 INSERT INTO Teachers (teacher_id, first_name, last_name, email) VALUES
 (1, 'Johnny', 'lever', 'johnny.lever@gmail.com'),
 (2, 'Jane', 'Austen', 'jane.austen@gmail.com'),
 (3, 'Mark', 'Twain', 'mark.twain@gmail.com');  
+
+
+--3. Update the email address of a teacher in the "Teachers" table.
+
+
+update Teachers set email='johnnylever01@gmail.com' where teacher_id=1;
+
+![alt text](image-3.png)
 
 -- Create Payments Table
 CREATE TABLE Payments (
