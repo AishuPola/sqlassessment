@@ -67,9 +67,10 @@ INSERT INTO Enrollments (enrollment_id, student_id, course_id, enrollment_date) 
 -- 2. Write an SQL query to enroll an existing student in a course, specifying the enrollment date.
 
 INSERT INTO Enrollments (enrollment_id, student_id, course_id, enrollment_date) VALUES(8,8,5,'2024-05-15');
+```
 
 ![alt text](image-2.png)
-
+```sql
 -- Create Teachers Table
 CREATE TABLE Teachers (
     teacher_id INT PRIMARY KEY,
@@ -89,8 +90,9 @@ INSERT INTO Teachers (teacher_id, first_name, last_name, email) VALUES
 
 
 update Teachers set email='johnnylever01@gmail.com' where teacher_id=1;
-
+```
 ![alt text](image-3.png)
+```sql
 
 -- Create Payments Table
 CREATE TABLE Payments (
@@ -113,3 +115,13 @@ INSERT INTO Payments (payment_id, student_id, amount, payment_date) VALUES
 (7, 7, 450.00, '2024-05-16');  
 
 
+--4. Write an SQL query to delete a specific enrollment record, choosing based on the student and course.
+
+
+```
+![](image-4.png)
+```sql
+delete from Enrollments where student_id=7 and course_id=4;
+```
+
+![alt text](image-5.png)
