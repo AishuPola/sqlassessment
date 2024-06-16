@@ -124,4 +124,16 @@ INSERT INTO Payments (payment_id, student_id, amount, payment_date) VALUES
 delete from Enrollments where student_id=7 and course_id=4;
 ```
 
-![alt text](image-5.png)
+![alt text](image-5.png)  
+```sql
+
+--5. Update a course to assign a specific teacher using the "Courses" table.
+```
+
+![alt text](image-6.png)
+```sql 
+update Courses set teacher_id=3 where course_id=1;
+```
+![alt text](image-7.png)
+
+```sql
