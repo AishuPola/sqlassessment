@@ -195,4 +195,13 @@ as student_counts;
 ![](image-13.png)  
 
 ```sql 
---12.
+--12.Identify the student(s) who made the highest payment using a subquery. 
+select student_id,amount from Payments where amount=(select max(amount) from Payments);
+```
+![alt text](image-14.png)
+```sql
+--13.Retrieve a list of courses with the highest number of enrollments using subqueries.
+select course_id from Enrollments group by course_id having count(student_id) =(select max(enrollment_count) from
+( select count(student_id) as enrollment_count from Enrollments group by course_id) as max_count);
+```
+![alt text](image-15.png)
