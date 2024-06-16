@@ -205,3 +205,15 @@ select course_id from Enrollments group by course_id having count(student_id) =(
 ( select count(student_id) as enrollment_count from Enrollments group by course_id) as max_count);
 ```
 ![alt text](image-15.png)
+```sql
+--14. Calculate the total payments made to courses taught by each teacher using subqueries.
+select teacher_id,Concat(first_name,' ',last_name) as taecher_name, (select sum(amount) from Payments ,Enrollments,Courses where Payments.student_id= Enrollments.student_id and 
+Enrollments.course_id=Courses.course_id and Courses.teacher_id= Teachers.teacher_id) as total_payments from Teachers;
+```
+![](image-16.png)
+
+```sql
+--15.Identify students who are enrolled in more than one course.
+select student_id,Concat(first_name,' ',last_name) as student_name  from Students where student_id in
+(select student_id from Enrollments group by student_id having count(course_id)>1);
+```
